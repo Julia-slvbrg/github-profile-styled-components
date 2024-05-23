@@ -4,7 +4,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended'
   ],
@@ -25,10 +25,16 @@ module.exports = {
     'react/prop-types': "off",
     'react/react-in-jsx-scope': "off",
     '@typescript-eslint/explicit-module-boundary-types': "off",
-  },
-  "settings": {
-    "react": {
-      "version": 'detect'
+    parserOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      project: ['./tsconfig.json', './tsconfig.node.json'],
+      tsconfigRootDir: __dirname,
+    },
+    "settings": {
+      "react": {
+        "version": 'detect'
+      }
     }
   }
 }
