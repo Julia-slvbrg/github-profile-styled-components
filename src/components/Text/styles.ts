@@ -3,6 +3,6 @@ import { Props } from ".";
 
 export const Text = styled.p<Props>`
   font-size: ${(props) => (props.fontSize? props.fontSize + 'px' : '14px')};
-  color: ${(props) => props.type === 'primary'? '#282A35' : '#949494'};
+  color: ${(props) => props.type === 'primary'? props.theme.primaryColor : props.theme.secondaryColor};
   line-height: 22px;
 `
